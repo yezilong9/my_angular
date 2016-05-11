@@ -18,14 +18,29 @@
         <th ng-click="order='nickname'"><a href="#">Nickname</a></th>
         <th ng-click="order='age'"><a href="#">Age</a></th>
         <th ng-click="order='price'"><a href="#">Price</a></th>
+        <th>Actions</th>
       </tr>
       <tr ng-repeat="user in users | filter:search | orderBy:order">
         <td>{{user.username}}</td>
         <td>{{user.nickname}}</td>
         <td>{{user.age}}</td>
         <td>{{user.price | currency:"￥"}}</td>
+        <td>
+          <button ng-click="editItem(user)">Edit</button>
+          <button ng-click="deleteItem(user)">Delete</button>
+        </td>
       </tr>
     </table>
+
+    <div ng-show="edit_form_visible">
+      <form name="editUserForm">
+        <div>Username: <input type="text" ng-model="editUser.username" required /></div>
+        <div>Nickname: <input type="text" ng-model="editUser.nickname"/></div>
+        <div>Age: <input type="text" ng-model="editUser.age"/></div>
+        <div>Price: <input type="text" ng-model="editUser.price"/></div>
+        <div><button ng-click="updateItem()" ng-disabled="editUserForm.$invalid">update Item</button></div>
+      </form>
+    </div>
 
     <button ng-click="addItem()">Add Item</button>
     <div ng-show="new_form_visible">

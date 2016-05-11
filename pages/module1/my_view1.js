@@ -32,4 +32,32 @@ angular.module("module1")
           $scope.new_form_visible = false;
         }
       }
+
+      $scope.deleteItem = function(item){
+        if(confirm("真的要删除吗？")){
+          $scope.users.splice($scope.users.indexOf(item),1);
+        }
+      }
+
+      $scope.edit_form_visible = false;//这个是控制显示的变量
+      $scope.current_user = null;//这个变量，来记录提交修改时，复制到原来的哪个对象中
+      $scope.editUser = {};//这个是临时的修改对象，为了不影响现有的user
+      $scope.editItem = function(item){
+        $scope.edit_form_visible = true;
+        $scope.current_user = item;
+        angular.copy($scope.current_user,$scope.editUser);
+        // $scope.editUser = item;
+      }
+
+      $scope.updateItem = function(item){
+        if($scope.editUser.username == ""){
+          alert("username is null");
+        }else{
+          angular.copy($scope.editUser,$scope.current_user);
+          $scope.current_user = null;
+          $scope.edit_form_visible = false;
+        }
+      }
+
+
   })
