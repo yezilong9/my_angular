@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="my_angular">
+<html>
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div ng-controller="my_controller_1">
+  <div ng-app="my_angular" ng-controller="my_controller_1">
     <input type="text" ng-model="myobject.text">
     <div ng-bind="myobject.text"></div>
 
@@ -22,7 +22,7 @@
 
   </div>
 
-  <div ng-controller="my_controller_2">
+  <div id="another" ng-app="my_angular_another" ng-controller="my_controller_2">
     <input type="text" ng-model="myobject.text">
     <div ng-bind="myobject.text"></div>
   </div>
