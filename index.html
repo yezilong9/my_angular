@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app>
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -8,6 +8,7 @@
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <link rel="stylesheet" href="">
 <body>
-
+<input type="text" ng-model="myobject" ng-init="myobject='hello'">
+<div ng-bind="myobject"></div>
 </body>
 </html>
