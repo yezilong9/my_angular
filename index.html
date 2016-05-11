@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="my_angular">
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/module1.js"></script>
+  <script type="text/javascript" src="js/module2.js"></script>
 </head>
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-<link rel="stylesheet" href="">
+
 <body>
-<input type="text" ng-model="myobject" ng-init="myobject='hello'">
-<div ng-bind="myobject"></div>
+  <div ng-controller="my_controller_1">
+    <input type="text" ng-model="myobject.text">
+    <div ng-bind="myobject.text"></div>
+
+    <div ng-controller="my_controller_1_1">
+      <input type="text" ng-model="myobject.text">
+      <div ng-bind="myobject.text"></div>
+    </div>
+
+  </div>
+
+  <div ng-controller="my_controller_2">
+    <input type="text" ng-model="myobject.text">
+    <div ng-bind="myobject.text"></div>
+  </div>
 </body>
 </html>
