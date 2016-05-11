@@ -1,0 +1,43 @@
+<div ng-controller="my_controller_1">
+    <input type="text" ng-model="myobject.text">
+    <div ng-bind="myobject.text"></div>
+    <div>Search:
+      <input type="text" ng-model="search"/>
+    </div>
+    <div>Order:
+      <select ng-model="order">
+        <option value="username">username</option>
+        <option value="nickname">nickname</option>
+        <option value="age">age</option>
+        <option value="price">price</option>
+      </select>
+    </div>
+    <table>
+      <tr>
+        <th ng-click="order='username'"><a href="#">Username</a></th>
+        <th ng-click="order='nickname'"><a href="#">Nickname</a></th>
+        <th ng-click="order='age'"><a href="#">Age</a></th>
+        <th ng-click="order='price'"><a href="#">Price</a></th>
+      </tr>
+      <tr ng-repeat="user in users | filter:search | orderBy:order">
+        <td>{{user.username}}</td>
+        <td>{{user.nickname}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.price | currency:"￥"}}</td>
+      </tr>
+    </table>
+
+    <button ng-click="addItem()">Add Item</button>
+    <div ng-show="new_form_visible">
+      <form>
+        <div>Username: <input type="text" ng-model="newItem.username"/></div>
+        <div>Nickname: <input type="text" ng-model="newItem.nickname"/></div>
+        <div>Age: <input type="text" ng-model="newItem.age"/></div>
+        <div>Price: <input type="text" ng-model="newItem.price"/></div>
+        <div><button ng-click="saveItem()">Save Item</button></div>
+      </form>
+    </div>
+
+    <div ng-include="'pages/module1/my_view1_1.html'"></div>
+
+  </div>
