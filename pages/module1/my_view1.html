@@ -29,12 +29,12 @@
 
     <button ng-click="addItem()">Add Item</button>
     <div ng-show="new_form_visible">
-      <form>
-        <div>Username: <input type="text" ng-model="newItem.username"/></div>
+      <form name="userForm">
+        <div>Username: <input type="text" ng-model="newItem.username" required /></div>
         <div>Nickname: <input type="text" ng-model="newItem.nickname"/></div>
         <div>Age: <input type="text" ng-model="newItem.age"/></div>
         <div>Price: <input type="text" ng-model="newItem.price"/></div>
-        <div><button ng-click="saveItem()">Save Item</button></div>
+        <div><button ng-click="saveItem()" ng-disabled="userForm.$invalid">Save Item</button></div>
       </form>
     </div>
 
