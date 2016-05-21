@@ -1,0 +1,19 @@
+<table>
+      <tr>
+        <th ng-click="order='username'"><a href="#">Username</a></th>
+        <th ng-click="order='nickname'"><a href="#">Nickname</a></th>
+        <th ng-click="order='age'"><a href="#">Age</a></th>
+        <th ng-click="order='price'"><a href="#">Price</a></th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="user in users | filter:search | orderBy:order">
+        <td>{{user.username}}</td>
+        <td>{{user.nickname}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.price | currency:"￥"}}</td>
+        <td>
+          <button ng-click="editItem(user)">Edit</button>
+          <button ng-click="deleteItem(user)">Delete</button>
+        </td>
+      </tr>
+    </table>
