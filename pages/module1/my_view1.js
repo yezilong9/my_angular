@@ -11,6 +11,24 @@ angular.module("module1")
         {username:"user06",nickname:"nickname06",age:20,price:6000},
       ];
 
+      $scope.hotusers = [
+        {username:"hotuser01",nickname:"nickname01",age:80,price:1000},
+        {username:"hotuser02",nickname:"nickname02",age:90,price:2000},
+        {username:"hotuser03",nickname:"nickname03",age:100,price:3000},
+        {username:"hotuser04",nickname:"nickname04",age:110,price:4000},
+        {username:"hotuser05",nickname:"nickname05",age:40,price:5000},
+        {username:"hotuser06",nickname:"nickname06",age:20,price:6000},
+      ];
+
+      $scope.coldusers = [
+        {username:"colduser01",nickname:"nickname01",age:80,price:1000},
+        {username:"colduser02",nickname:"nickname02",age:90,price:2000},
+        {username:"colduser03",nickname:"nickname03",age:100,price:3000},
+        {username:"colduser04",nickname:"nickname04",age:110,price:4000},
+        {username:"colduser05",nickname:"nickname05",age:40,price:5000},
+        {username:"colduser06",nickname:"nickname06",age:20,price:6000},
+      ];
+
       $scope.new_form_visible = false;
 
       $scope.addItem = function(){

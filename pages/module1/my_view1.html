@@ -1,6 +1,7 @@
 <div ng-controller="my_controller_1">
     <input type="text" ng-model="myobject.text">
     <div ng-bind="myobject.text"></div>
+    </br></br>
     <div>Search:
       <input type="text" ng-model="search"/>
     </div>
@@ -12,26 +13,19 @@
         <option value="price">price</option>
       </select>
     </div>
-    <table>
-      <tr>
-        <th ng-click="order='username'"><a href="#">Username</a></th>
-        <th ng-click="order='nickname'"><a href="#">Nickname</a></th>
-        <th ng-click="order='age'"><a href="#">Age</a></th>
-        <th ng-click="order='price'"><a href="#">Price</a></th>
-        <th>Actions</th>
-      </tr>
-      <tr ng-repeat="user in users | filter:search | orderBy:order">
-        <td>{{user.username}}</td>
-        <td>{{user.nickname}}</td>
-        <td>{{user.age}}</td>
-        <td>{{user.price | currency:"￥"}}</td>
-        <td>
-          <button ng-click="editItem(user)">Edit</button>
-          <button ng-click="deleteItem(user)">Delete</button>
-        </td>
-      </tr>
-    </table>
+    </br></br>
 
+    <my-users attr-users="users">
+      <h3>最新用户</h3>
+    </my-users>
+    <div my-users attr-users="hotusers">
+      <h3>最热门用户</h3>
+    </div>
+    <div class="my-users" attr-users="coldusers">
+      <h3>最冷门用户</h3>
+    </div>
+
+    </br></br>
     <div ng-show="edit_form_visible">
       <form name="editUserForm">
         <div>Username: <input type="text" ng-model="editUser.username" required /></div>
@@ -53,6 +47,7 @@
       </form>
     </div>
 
+</br></br></br>
     <div ng-include="'pages/module1/my_view1_1.html'"></div>
 
   </div>
