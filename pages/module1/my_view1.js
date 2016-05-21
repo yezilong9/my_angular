@@ -45,7 +45,7 @@ angular.module("module1")
         if(!$scope.newItem.username){
           alert("username is null");
         }else{
-          $scope.users.push[$scope.newItem];
+          $scope.users.push($scope.newItem);
           $scope.newItem = null;
           $scope.new_form_visible = false;
         }
